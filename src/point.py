@@ -32,10 +32,30 @@ class Point(ABC):
     def __repr__(self) -> str:
         # TODO - Docstring
         pass
-    
+
     @abstractmethod
     def __hash__(self) -> int:
         # TODO - Docstring
+        pass
+    
+    @abstractmethod
+    def __eq__(self, other: "Point") -> bool:
+        pass
+
+    @abstractmethod
+    def __add__(self, other: "Point") -> "Point":
+        pass
+
+    @abstractmethod
+    def __sub__(self, other: "Point") -> "Point":
+        pass
+
+    @abstractmethod
+    def __mul__(self, other: "Point") -> "Point":
+        pass
+
+    @abstractmethod
+    def __floordiv__(self, other: "Point") -> "Point":
         pass
     
     @abstractmethod
