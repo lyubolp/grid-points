@@ -1,0 +1,41 @@
+@startuml "grid-point class diagram"
+
+abstract Point {
+    + __iter__() -> GridIterator
+    + __str__() -> str
+    + __repr__() -> str
+    + __hash__() -> str
+    + distance_to(Point) -> float
+    + is_within(Point) -> bool
+}
+
+interface GridIterator {
+    + __next__() -> Point
+}
+
+class Point2D {
+    - x: int
+    - y: int
+    + x() -> int
+    + y() -> int
+    + x(int)
+    + y(int)
+}
+
+class Point3D {
+    - x: int
+    - y: int
+    - z: int
+    + x() -> int
+    + y() -> int
+    + z() -> int
+    + x(int)
+    + y(int)
+    + z(int)
+}
+
+Point <|-- Point2D
+Point <|-- Point3D
+GridIterator <|-- Point2D
+GridIterator <|-- Point3D
+@enduml
