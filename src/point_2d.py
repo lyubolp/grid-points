@@ -4,8 +4,8 @@ Module containing the Point2D class
 from math import sqrt
 from typing import Optional
 
-from grid_iterator.grid_iterator import GridIterator
-from grid_iterator.grid_iterator_2d import GridIterator2D
+from src.grid_iterator.grid_iterator import GridIterator
+from src.grid_iterator.grid_iterator_2d import GridIterator2D
 from src.point import Point
 
 

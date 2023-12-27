@@ -5,13 +5,13 @@ Module containing the abstract class for Point
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from grid_iterator.grid_iterator import GridIterator
+from src.grid_iterator.grid_iterator import GridIterator
 
 
 class Point(ABC):
     """
     Represents an abstract point in a Nth dimentional grid.
-    
+
     Supports iteration, string representation, distance calculations
         and bounds calculations
     """
