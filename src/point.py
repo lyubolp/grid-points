@@ -5,8 +5,6 @@ Module containing the abstract class for Point
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from src.grid_iterator.grid_iterator import GridIterator
-
 
 class Point(ABC):
     """
@@ -15,13 +13,6 @@ class Point(ABC):
     Supports iteration, string representation, distance calculations
         and bounds calculations
     """
-
-    @abstractmethod
-    def __iter__(self) -> GridIterator:
-        """
-        Returns an GridIterator, which can be used for iteration over the grid
-        :rtype: GridIterator
-        """
 
     @abstractmethod
     def __str__(self) -> str:
