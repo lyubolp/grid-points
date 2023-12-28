@@ -353,3 +353,83 @@ class TestsPoint2D(unittest.TestCase):
         self.assertFalse(is_y_outside_left_within)
         self.assertFalse(is_y_on_right_within)
         self.assertFalse(is_y_outside_right_within)
+
+    def test_15_lt(self):
+        """
+        Verify `<=` works properly
+        """
+        # Arrange
+        a = Point2D(3, 5)
+        b = Point2D(4, 6)
+        c = Point2D(3, 4)
+        d = Point2D(4, 4)
+
+        # Act
+        is_a_lt_b = a < b
+        is_a_lt_c = a < c
+        is_a_lt_d = a < d
+
+        # Assert
+        self.assertTrue(is_a_lt_b)
+        self.assertFalse(is_a_lt_c)
+        self.assertFalse(is_a_lt_d)
+
+    def test_16_le(self):
+        """
+        Verify `<=` works properly
+        """
+        # Arrange
+        a = Point2D(3, 5)
+        b = Point2D(3, 6)
+        c = Point2D(3, 4)
+        d = Point2D(4, 4)
+
+        # Act
+        is_a_lt_b = a <= b
+        is_a_lt_c = a <= c
+        is_a_lt_d = a <= d
+
+        # Assert
+        self.assertTrue(is_a_lt_b)
+        self.assertFalse(is_a_lt_c)
+        self.assertFalse(is_a_lt_d)
+
+    def test_17_gt(self):
+        """
+        Verify `>` works properly
+        """
+        # Arrange
+        a = Point2D(3, 5)
+        b = Point2D(2, 4)
+        c = Point2D(3, 4)
+        d = Point2D(2, 6)
+
+        # Act
+        is_a_lt_b = a > b
+        is_a_lt_c = a > c
+        is_a_lt_d = a > d
+
+        # Assert
+        self.assertTrue(is_a_lt_b)
+        self.assertFalse(is_a_lt_c)
+        self.assertFalse(is_a_lt_d)
+
+    def test_18_ge(self):
+        """
+        Verify `>=` works properly
+        """
+        # Arrange
+        a = Point2D(3, 5)
+        b = Point2D(3, 4)
+        c = Point2D(4, 4)
+        d = Point2D(2, 6)
+
+        # Act
+        is_a_lt_b = a >= b
+        is_a_lt_c = a >= c
+        is_a_lt_d = a >= d
+
+        # Assert
+        self.assertTrue(is_a_lt_b)
+        self.assertFalse(is_a_lt_c)
+        self.assertFalse(is_a_lt_d)
