@@ -35,16 +35,6 @@ class TestsPoint2D(unittest.TestCase):
         self.assertEqual(expected_x, actual_x)
         self.assertEqual(expected_y, actual_y)
 
-    def test_03_iter(self):
-        # Arrange
-        out = Point2D(3, 5)
-
-        # Act
-        iter(out)
-
-        # Nothing to assert - iter() should pass
-        # Actual iterator implementation is tested under GridIterator2D
-
     def test_04_str(self):
         # Arrange
         x, y = (3, 5)
