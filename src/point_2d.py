@@ -63,9 +63,37 @@ class Point2D:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Point2D):
             # https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
-            raise ValueError("Invalid type for other")
+            raise NotImplementedError("Invalid type for other")
 
         return self.x == other.x and self.y == other.y
+
+    def __lt__(self, other: object) -> bool:
+        if not isinstance(other, Point2D):
+            # https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+            raise NotImplementedError("Invalid type for other")
+
+        return self.x < other.x and self.y < other.y
+
+    def __le__(self, other: object) -> bool:
+        if not isinstance(other, Point2D):
+            # https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+            raise NotImplementedError("Invalid type for other")
+
+        return self.x <= other.x and self.y <= other.y
+
+    def __gt__(self, other: object) -> bool:
+        if not isinstance(other, Point2D):
+            # https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+            raise NotImplementedError("Invalid type for other")
+
+        return self.x > other.x and self.y > other.y
+
+    def __ge__(self, other: object) -> bool:
+        if not isinstance(other, Point2D):
+            # https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+            raise NotImplementedError("Invalid type for other")
+
+        return self.x >= other.x and self.y >= other.y
 
     def __add__(self, other: "Point2D") -> "Point2D":
         """
