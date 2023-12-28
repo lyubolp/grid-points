@@ -12,7 +12,7 @@ class GridIterator2D:
     Represents the 2D Grid iterator.
     This class iterates the 2D grid defined by `end` and `start` (default is (0, 0)).
 
-    Iteration is done row by row - iterate over the points on the first row, 
+    Iteration is done row by row - iterate over the points on the first row,
     then the second one, etc.
     """
     def __init__(self, end: Point2D, start: Optional[Point2D] = None):
