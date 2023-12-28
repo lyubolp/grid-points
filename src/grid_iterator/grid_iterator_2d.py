@@ -4,11 +4,10 @@ Module containing the 2D grid iterator class
 
 from typing import Optional
 
-from src.grid_iterator.grid_iterator import GridIterator
 from src.point_2d import Point2D
 
 
-class GridIterator2D(GridIterator):
+class GridIterator2D:
     """
     Represents the 2D Grid iterator.
     This class iterates the 2D grid defined by `end` and `start` (default is (0, 0)).
