@@ -15,8 +15,7 @@ class GridIterator(ABC):
     :type ABC: _type_
     """
     def __init__(self, end: Point, start: Optional[Point] = None):
-        self._end = end
-        self._start = start
+        pass
 
     @abstractmethod
     def __next__(self) -> Point:
