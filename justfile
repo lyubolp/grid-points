@@ -18,7 +18,7 @@ push: venv lint test
     git push
 
 coverage: venv
-    coverage run -m unittest discover -s tests
+    coverage run -m unittest discover -s tst
     coverage report -m --fail-under 75
 
 run: venv
