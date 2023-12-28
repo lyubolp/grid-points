@@ -7,14 +7,17 @@ init:
     pip install -r requirements.txt
 
 lint: venv
-    python3 -m pylint src/* --fail-under 9
-    mypy src --ignore-missing-imports
-    flake8 src
+    python3 -m pylint src/* tst/* --fail-under 9
+    mypy src tst --ignore-missing-imports
+    flake8 src tst
 
 test: venv
     python3 -m unittest discover -s tst
 
-push: venv lint test
+
+pre-push: venv lint test coverage
+
+push: pre-push
     git push
 
 coverage: venv
