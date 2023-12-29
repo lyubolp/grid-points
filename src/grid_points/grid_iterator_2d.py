@@ -17,14 +17,14 @@ class GridIterator2D(abc.Iterator):
     then the second one, etc.
     """
     def __init__(self, end: Point2D, start: Optional[Point2D] = None):
-        self._end = end
-        self._start = start
+        self.__end = end
+        self.__start = start
 
-        if self._start is None:
-            self._start = Point2D(0, 0)
+        if self.__start is None:
+            self.__start = Point2D(0, 0)
 
-        x_range = range(self._start.x, self._end.x)
-        y_range = range(self._start.y, self._end.y)
+        x_range = range(self.__start.x, self.__end.x)
+        y_range = range(self.__start.y, self.__end.y)
 
         self.__iterator = (Point2D(x, y) for x in x_range for y in y_range)
 
