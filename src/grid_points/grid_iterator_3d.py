@@ -3,7 +3,6 @@ Module containing the 3D grid iterator class
 """
 
 from collections import abc
-from copy import copy
 from typing import Optional
 
 from src.grid_points.point_3d import Point3D
