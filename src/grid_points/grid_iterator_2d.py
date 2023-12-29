@@ -2,12 +2,14 @@
 Module containing the 2D grid iterator class
 """
 
+from collections import abc
+from copy import copy
 from typing import Optional
 
-from src.point_2d import Point2D
+from src.grid_points.point_2d import Point2D
 
 
-class GridIterator2D:
+class GridIterator2D(abc.Iterator):
     """
     Represents the 2D Grid iterator.
     This class iterates the 2D grid defined by `end` and `start` (default is (0, 0)).
@@ -20,20 +22,18 @@ class GridIterator2D:
         self._start = start
 
         if self._start is None:
-            self.__current = Point2D(0, 0)
+            self.__current = Point2D(0, -1)
         else:
-            self.__current = self._start
+            self.__current = self._start - Point2D(0, 1)
 
     def __next__(self) -> Point2D:
-        current = self.__current
+        self.__current.y += 1
 
-        if not self.__current.is_within(self._end):
+        if self.__current.y == self._end.y:
+            self.__current.x += 1
+            self.__current.y = 0 if self._start is None else self._start.y
+
+        if self.__current.x == self._end.x:
             raise StopIteration()
 
-        if self.__current.x < self._end.x:
-            self.__current.x += 1
-        else:
-            self.__current.y += 1
-            self.__current.x = 0
-
-        return current
+        return copy(self.__current)

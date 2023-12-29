@@ -3,7 +3,7 @@ Module containing the unittests for the Point2D class
 """
 import unittest
 
-from src.point_2d import Point2D
+from src.grid_points.point_2d import Point2D
 
 
 class TestsPoint2D(unittest.TestCase):
