@@ -205,6 +205,6 @@ class Point3D:
 
         is_x_inside = start.x <= self.x < end.x
         is_y_inside = start.y <= self.y < end.y
-        is_z_inside = start.z <= self.z <= end.z
+        is_z_inside = start.z <= self.z < end.z
 
         return is_x_inside and is_y_inside and is_z_inside
