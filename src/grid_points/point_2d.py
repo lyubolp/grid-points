@@ -148,7 +148,7 @@ class Point2D:
         Calculate the distance between the current point an any other one
 
         :param other: The Point to calculate the distance to
-        :type other: Point2Д
+        :type other: Point2D
         :return: The Eucledian distance between the points
         :rtype: float
         """
