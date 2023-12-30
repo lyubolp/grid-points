@@ -1,41 +1,76 @@
 @startuml "grid-point class diagram"
 
-abstract Point {
-    + __iter__() -> GridIterator
-    + __str__() -> str
-    + __repr__() -> str
-    + __hash__() -> str
-    + distance_to(Point) -> float
-    + is_within(Point) -> bool
-}
-
-interface GridIterator {
-    + __next__() -> Point
-}
-
 class Point2D {
     - x: int
     - y: int
+    + __init__(self, x: int, y: int) -> Point2D
     + x() -> int
     + y() -> int
     + x(int)
     + y(int)
+    + __str__() -> str
+    + __repr__() -> str
+    + __hash__() -> str
+    + __lt__() -> bool
+    + __le__() -> bool
+    + __gt__() -> bool
+    + __ge__() -> bool
+    + __add__(other: Point2D) -> Point2D
+    + __sub__(other: Point2D) -> Point2D
+    + __mul__(other: Point2D) -> Point2D
+    + __floordiv__(other: Point2D) -> Point2D
+    + distance_to(Point2D) -> float
+    + is_within(Point2D) -> bool
 }
 
 class Point3D {
     - x: int
     - y: int
     - z: int
+    + __init__(self, x: int, y: int, z: int) -> Point3D
     + x() -> int
     + y() -> int
     + z() -> int
     + x(int)
     + y(int)
     + z(int)
+    + __str__() -> str
+    + __repr__() -> str
+    + __hash__() -> str
+    + __lt__() -> bool
+    + __le__() -> bool
+    + __gt__() -> bool
+    + __ge__() -> bool
+    + __add__(other: Point3D) -> Point3D
+    + __sub__(other: Point3D) -> Point3D
+    + __mul__(other: Point3D) -> Point3D
+    + __floordiv__(other: Point3D) -> Point3D
+    + distance_to(Point3D) -> float
+    + is_within(Point3D) -> bool
 }
 
-Point <|-- Point2D
-Point <|-- Point3D
-GridIterator <|-- Point2D
-GridIterator <|-- Point3D
+
+
+abstract Iterator {
+    + __iter__()
+    + __next__()
+}
+
+class GridIterator2D {
+    - start: Optional[Point2D]
+    - end: Point2D
+    - iterator: Generator[Point2D]
+    + __init__(self, end: Point2D, start: Optional[Point2D]) -> GridIterator2D
+    + __next__(self) -> Point2D
+}
+
+class GridIterator3D {
+    - start: Optional[Point3D]
+    - end: Point3D
+    - iterator: Generator[Point3D]
+    + __init__(self, end: Point3D, start: Optional[Point3D]) -> GridIterator3D
+    + __next__(self) -> Point3D
+}
+Iterator <|-- GridIterator2D
+Iterator <|-- GridIterator3D
 @enduml
